@@ -159,6 +159,6 @@ app.get("/",function(req,res,next){
 });
 
 
-app.listen(9000,function(err){
+app.listen(80,function(err){
 	console.log("The app is connected to port 9000")
 });
