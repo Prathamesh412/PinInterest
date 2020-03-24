@@ -159,6 +159,7 @@ app.get("/",function(req,res,next){
 });
 
 
-app.listen(80,function(err){
-	console.log("The app is connected to port 9000")
+var server = app.listen(process.env.PORT || 80, function () {
+	var port = server.address().port;
+	console.log("Express is working on port " + port);
 });
