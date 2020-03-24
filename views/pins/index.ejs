@@ -1,0 +1,38 @@
+
+<%- include("../layout") %>
+
+<div class="container">
+    <div id="pins">
+        <% for(var i=0; i<pins.length; i++){ %>
+            <div class="box" style="margin:20px">
+                <a href="/pins/details/<%= pins[i].id %>">
+                <img src="/public/<%= pins[i].path %>" style="width: 200px;" />
+                </a>
+                <h2>
+                    <a href="/pins/details/<%= pins[i].id %>"><%= pins[i].title %></a>
+                </h2>
+                <p>
+                    Submitted by:- <%= pins[i].username %>
+                </p>
+                <p>
+                    Description:- <%= pins[i].desc %>
+                </p>
+            <a class="btn btn-primary" href="/pins/delete/<%= pins[i].id %>">Delete</a>
+            </div>
+        <%}%>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        return $("#pins").imagesLoaded(function(){
+            return $("#pins").masonry({
+                itemSelector: ".box",
+                isFitWidth:true
+            })
+        })
+    })
+</script>
+
+<%- include("../footer") %>
+

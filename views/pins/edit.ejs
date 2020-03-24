@@ -1,0 +1,22 @@
+<%- include("../layout") %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-10">
+			<h1>Create a New Pin</h1>
+			<form role="form" method="post" enctype="multipart/form-data" >
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" class="form-control" name="title" value=<%= pin.title %>>
+				</div>
+				<div class="form-group">
+					<label for="desc">Description:</label>
+					<input type="text" class="form-control" name="desc" value=<%= pin.desc %>>
+				</div>
+				<button type="submit" class="btn btn-primary"> Submit Pin</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<%- include("../footer") %>

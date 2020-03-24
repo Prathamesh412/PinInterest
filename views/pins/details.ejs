@@ -1,0 +1,28 @@
+<%- include("../layout") %>
+
+<div class="container">
+    <div class="card" style="width:30rem;">
+    <img class="card-img-top" src="/public/<%= pin.path%>" alt="" />
+    <div class="card-block">
+        <h4 class="card-title"><%= pin.title%></h4>
+        <p class="card-text"><%= pin.desc%></p>
+        <div class="btn-group pull-right">
+            <a class="btn btn-default" href="/pins/pins-save/<%= pin._id%>">
+                <span class="fa <%- (pin.isSave)? 'fa-star':'fa-star-o'%> fa-lg"></span>
+            </a>
+            <a class="btn btn-default" href="/pins/edit/<%= pin._id%>">Edit</a>
+        </div>
+    </div>
+    </div>
+</div>
+
+<style>
+    .card{
+        margin: 0 auto;
+        float:none;
+        margin-bottom:10px;
+    }
+</style>
+
+
+<%- include("../footer") %>
